@@ -1,0 +1,36 @@
+.case-preview {
+
+    justify-self: center;
+    width: 90%;
+    border: 1px solid #1a1a1a;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 50px 50px 10px rgba(0, 0, 0, 0.71);
+    margin: 5px;
+}
+
+.case-preview-info {
+
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+    justify-items: flex-start;
+    align-items: baseline;
+    gap: 1px 1px;
+    margin-right: 10px;
+}
+
+.case-preview-name-container {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+.case-preview-id {
+    font-size: 10px;
+}
+
+.case-preview-emotions-container{
+    width: 95%;
+}

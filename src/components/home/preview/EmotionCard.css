@@ -1,0 +1,37 @@
+.emotion-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: white;
+    padding: 10px;
+
+}
+
+.emotion-name {
+    margin-left: 10px;
+}
+
+.intensity-bar {
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+}
+.intensity-bar[data-intensity="low"] {
+    border:2px solid rgba(0, 128, 0, 1);
+    background: rgba(0, 128, 0,0.3);
+}
+.intensity-bar[data-intensity="medium"] {
+    border:2px solid rgb(255, 247, 0);
+    background: rgba(255, 255, 0, 0.3);
+}
+.intensity-bar[data-intensity="high"] {
+    border:2px solid rgba(255, 0, 0, 1);
+    background: rgba(255, 0, 0, 0.48);
+}
+
+.intensity-value{
+    margin-right: 50%;
+
+}
+
+

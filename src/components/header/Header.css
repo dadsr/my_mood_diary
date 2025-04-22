@@ -1,0 +1,13 @@
+.header {
+    display: grid;
+    justify-content: center;
+    background-color: rgba(95, 102, 48, 0.8);
+    border: 10px solid rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+}
+.header-title {
+    font-family: 'Calibri Hebrew', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 3rem;
+}

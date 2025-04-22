@@ -1,0 +1,61 @@
+.case-card {
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid rgba(26, 26, 26, 0.35);
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    padding: 10px;
+    max-width: 250px;
+}
+
+.case-name-container {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.case-id {
+    font-size: 15px;
+    margin: 5px;
+}
+
+.case-info {
+    height: 200px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    justify-items: flex-start;
+    align-items: baseline;
+
+    row-gap: 1px;
+    column-gap: 10px;
+
+    background-color:white;
+    border-radius: 15px;
+
+}
+
+.button-card  {
+    background-color: rgba(34, 34, 59, 0.85);
+    color: #ffffff;
+    border: 1px solid #ffff19;
+    flex: fit-content;
+    padding: 10px ;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    align-self: center;
+
+    transition: background-color 0.3s ease;
+}
+.button-card:hover {
+    background-color: #0056b3;
+}
