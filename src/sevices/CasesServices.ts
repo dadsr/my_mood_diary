@@ -105,5 +105,4 @@ export class CasesService {
     }
 }
 const casesService = new CasesService();
-
 export default casesService;
