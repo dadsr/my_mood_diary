@@ -29,7 +29,13 @@ export class CasesService {
 
     addCase(newCase:Case):void {
         const storedCases = this.getCases();
-        newCase.id = storedCases.length + 1;
+        console.log("storedCases:",storedCases);
+        if(storedCases.length >0){
+            newCase.id = Math.max(...storedCases.map(c => c.id || 0)) + 1;
+        }
+        else
+            newCase.id = 1;
+
         const serializedCase = {
             ...newCase,
             emotions: newCase.emotions.map(e => ({
@@ -40,7 +46,6 @@ export class CasesService {
         };
         localStorage.setItem("cases", JSON.stringify([...storedCases, serializedCase]));
     }
-
 
     updateCase(updatedCase:Case):void {
         const storedCases = this.getCases();
@@ -56,7 +61,7 @@ export class CasesService {
                     _intensity: e.getIntensity
                 })),
                 caseDate: updatedCase.caseDate.toISOString()
-                };
+            };
             const updatedCases  = [...storedCases];
             updatedCases[index] = this.parseSerializedCase(serializedCase);
             console.log("updatedCases index values:", index ,updatedCases[index]);
@@ -66,11 +71,12 @@ export class CasesService {
             localStorage.setItem("cases", JSON.stringify(updatedCases.map(c => this.serializeCase(c))));
         }
     }
-    deleteCase(caseId:number):void {
+
+    deleteCase(caseId:number):Case[] {
         const storedCases = this.getCases();
-        const index = storedCases.findIndex(caseItem => caseItem.id === caseId);
-        storedCases.splice(index,1);
-        localStorage.setItem("cases", JSON.stringify(storedCases));
+        const newCases = storedCases.filter(caseItem => caseItem.id !== caseId);
+        localStorage.setItem("cases", JSON.stringify(newCases));
+        return newCases;
     }
 
     private serializeCase(caseInstance: Case): SerializedCase {

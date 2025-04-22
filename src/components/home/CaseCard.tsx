@@ -10,7 +10,6 @@ import { ReducerAction } from "../../contexts/Reducer";
 interface caseProps {
     case: Case;
     dispatch: React.Dispatch<ReducerAction>;
-    setCases: React.Dispatch<React.SetStateAction<Case[]>>;
 }
 
 export function CaseCard(props: caseProps): JSX.Element {
@@ -27,8 +26,7 @@ export function CaseCard(props: caseProps): JSX.Element {
     }
 
     const deleteCase = async () => {
-        casesService.deleteCase(props.case.id!);
-        props.setCases(casesService.getCases());
+        props.dispatch({ type: 'SET_CASES', payload: casesService.deleteCase(props.case.id!)});
         props.dispatch({ type: 'CLEAR_PREVIEW' });
     };
 
