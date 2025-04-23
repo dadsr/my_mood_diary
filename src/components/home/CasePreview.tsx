@@ -1,7 +1,7 @@
-import "./CasePreview.css";
-import {Case} from "../../../models/Case.ts";
+import "./css/CasePreview.css";
+import {Case} from "../../models/Case.ts";
 import {JSX} from "react";
-import {Emotion} from "../../../models/Emotion.ts";
+import {Emotion} from "../../models/Emotion.ts";
 import {EmotionCard} from "./EmotionCard.tsx";
 
 interface caseProps {

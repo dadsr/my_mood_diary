@@ -1,4 +1,4 @@
-import "./CaseCard.css";
+import "./css/CaseCard.css";
 import {Case} from "../../models/Case.ts";
 import {useNavigate} from "react-router-dom";
 

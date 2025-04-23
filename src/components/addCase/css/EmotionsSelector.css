@@ -1,6 +1,5 @@
 .edit-emotions-container {
     font-family: 'Calibri Hebrew', sans-serif;
-
     background-color: rgba(244, 244, 238, 0.02);
     min-height: 100px;
     width: 80%;
@@ -11,7 +10,6 @@
     margin: 20px  ;
     padding: 10px;
     gap: 30px;
-
     border-radius: 15px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
@@ -19,6 +17,7 @@
 .emotions-selector-container {
     width: 100% ;
 }
+
 .edit-emotions-top-container {
     font-size: 20px;
 
@@ -32,6 +31,7 @@
 .intensity-sliders-bottom-container{
 
 }
+
 .emotion-select__control {
     width: 80%;
     background: white;
@@ -39,7 +39,6 @@
     border-radius: 15px;
     padding: 15px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-
 }
 
 .emotion-select__option {
@@ -57,7 +56,6 @@
     background: rgba(131, 74, 131, 0.2);
 }
 
-
 .intensity-control {
     display: grid;
     grid-template-columns: 1.5fr 6fr 2fr 2fr;
@@ -68,7 +66,6 @@
     /* Remove or reduce padding-right if not needed */
     column-gap: 1rem;
     margin-right: 1rem;
-
 }
 
 .intensity-slider {

@@ -1,4 +1,4 @@
-import "./EditCase.css"
+import "./css/EditCase.css"
 import {Controller, useForm} from "react-hook-form";
 import {JSX, useEffect, useState} from "react";
 import {Case} from "../../models/Case.ts";

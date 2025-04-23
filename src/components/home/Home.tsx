@@ -1,10 +1,10 @@
-import "./Home.css"
+import "./css/Home.css"
 import {JSX, useEffect, useReducer} from "react";
 import {Case} from "../../models/Case.ts";
 import {useNavigate} from "react-router-dom";
 import {CaseCard} from "./CaseCard.tsx";
 import casesService from "../../sevices/CasesServices.ts";
-import {CasePreview} from "./preview/CasePreview.tsx";
+import {CasePreview} from "./CasePreview.tsx";
 import {Reducer, reducerState} from "../../contexts/Reducer.ts";
 
 

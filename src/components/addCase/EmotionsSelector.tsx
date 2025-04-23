@@ -1,4 +1,4 @@
-import "./EmotionsSelector.css"
+import "./css/EmotionsSelector.css"
 import {EmotionKey, EmotionsConst} from "../../models/EmotionsConst.ts";
 import {Control, Controller} from "react-hook-form";
 import {Emotion} from "../../models/Emotion.ts";

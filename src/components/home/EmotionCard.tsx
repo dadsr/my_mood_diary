@@ -1,4 +1,4 @@
-import "./EmotionCard.css"
+import "./css/EmotionCard.css"
 import {JSX} from "react";
 
 interface emotionProps {

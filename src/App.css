@@ -4,14 +4,14 @@
 
 @font-face {
   font-family: 'Calibri Hebrew';
-  src: local('Calibri Hebrew'), url('./fonts/calibri-hebrew-bold.ttf') format('truetype');
+  src: local('Calibri Hebrew'), url('./fonts/calibri.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Calibri Hebrew';
-  src: local('Calibri Hebrew'), url('./fonts/calibri-hebrew-bold.ttf') format('truetype');
+  src: local('Calibri Hebrew'), url('./fonts/calibri-bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }

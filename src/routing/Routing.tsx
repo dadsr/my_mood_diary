@@ -12,6 +12,5 @@ export function Routing():JSX.Element {
                 <Route path="/editCase/:id" element={<EditCase />} />
             </Routes>
         </div>
-
     )
 }
