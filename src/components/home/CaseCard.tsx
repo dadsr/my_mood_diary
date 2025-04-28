@@ -6,16 +6,31 @@ import casesService from "../../sevices/CasesServices.ts";
 import * as React from "react";
 import { ReducerAction } from "../../contexts/Reducer";
 
-
 interface caseProps {
     case: Case;
     dispatch: React.Dispatch<ReducerAction>;
 }
 
+/**
+ * CaseCard Component
+ *
+ * Displays a summary card for a single case, with options to preview, edit, or delete the case.
+ *
+ * @param {Object} props - The component props.
+ * @param {Case} props.case - The case object to display.
+ * @param {React.Dispatch<ReducerAction>} props.dispatch - Dispatch function for state management actions.
+ *
+ * @returns {JSX.Element} The rendered case card.
+ *
+ * @example
+ * <CaseCard case={myCase} dispatch={dispatch} />
+ */
 export function CaseCard(props: caseProps): JSX.Element {
     const navigate = useNavigate();
 
-
+    /**
+     * Navigates to the edit case page with the current case data.
+     */
     const editCase = () => {
         navigate(`/editCase/${props.case.id}`, {
             state: {
@@ -25,6 +40,9 @@ export function CaseCard(props: caseProps): JSX.Element {
         });
     }
 
+    /**
+     * Deletes the current case and clears the preview.
+     */
     const deleteCase = async () => {
         props.dispatch({ type: 'SET_CASES', payload: casesService.deleteCase(props.case.id!)});
         props.dispatch({ type: 'CLEAR_PREVIEW' });

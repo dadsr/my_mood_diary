@@ -1,6 +1,16 @@
 import "./Header.css"
 import {JSX} from "react";
 
+/**
+ * Header Component
+ *
+ * Renders the main application header with the title "יומן מצב רוח".
+ *
+ * @returns {JSX.Element} The rendered header.
+ *
+ * @example
+ * <Header />
+ */
 export function Header(): JSX.Element {
 
     return (

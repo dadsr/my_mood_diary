@@ -7,8 +7,23 @@ import {EmotionCard} from "./EmotionCard.tsx";
 interface caseProps {
     case: Case;
 }
+
+/**
+ * CasePreview Component
+ *
+ * Displays a detailed, read-only view of a single case, including all case fields and a list of associated emotions.
+ *
+ * @param {Object} props - The component props.
+ * @param {Case} props.case - The case object to preview.
+ *
+ * @returns {JSX.Element} The rendered case preview.
+ *
+ * @example
+ * <CasePreview case={myCase} />
+ */
 export function CasePreview(props: caseProps): JSX.Element {
 
+    // Prepare emotion values for display using EmotionCard
     const selectedValues = (props.case.emotions || [])
         .map(data => new Emotion(data.getEmotion, data.getIntensity))
         .map(emotion => ({
