@@ -16,7 +16,17 @@ interface LocationState {
     }
 }
 
-
+/**
+ * EditCase Component
+ *
+ * A form component for creating or editing psychological case records.
+ * Handles both add and edit modes, with form validation and emotion selection.
+ *
+ * @component
+ * @example
+ * // Navigate to EditCase with state
+ * navigate('/edit-case', { state: { myCase: selectedCase, mode: 'edit' } });
+ */
 export function EditCase(): JSX.Element {
     const navigate = useNavigate();
     const location = useLocation() as LocationState;
@@ -36,7 +46,11 @@ export function EditCase(): JSX.Element {
         }
     });
 
-
+    /**
+     * Populates form fields with data from `myCase` when editing.
+     * Normalizes the emotions array to ensure all items are Emotion instances.
+     * Runs on changes to `myCase` or `setValue`.
+     */
     useEffect(() => {
         console.log("myCase:", myCase);
         if (myCase) {
@@ -58,7 +72,13 @@ export function EditCase(): JSX.Element {
         console.log("form value:", watch());
     }, [myCase, setValue]);
 
-
+    /**
+     * Handles form submission for adding or editing a case.
+     * Converts form data to a Case instance and calls the appropriate service method.
+     * Navigates back to the home page after saving.
+     *
+     * @param data - The form values submitted by the user.
+     */
     const onSubmit = async (data: CaseFormValues) => {
         console.log("onSubmit form values:", watch());
         console.log("onSubmit form values:", watch());
@@ -86,7 +106,16 @@ export function EditCase(): JSX.Element {
         setIsSubmitting(false);
     };
 
-
+    /**
+     * Renders the EditCase form.
+     *
+     * - Displays a title based on mode (add/edit).
+     * - Shows the case ID if editing an existing case.
+     * - Contains form fields for event name, date, thought, emotions, behavior, and symptoms.
+     * - Uses react-hook-form's Controller for controlled inputs and validation.
+     * - Integrates a custom EmotionsSelector component.
+     * - Disables the submit button while submitting.
+     */
     return (
         <div className="edit-container">
             <h2>{mode === 'add' ? 'צור אירוע חדש' : 'ערוך אירוע'}</h2>
@@ -138,6 +167,7 @@ export function EditCase(): JSX.Element {
                     />
                 </div>
 
+                {/* Emotions Selector */}
                 <EmotionsSelector  control = {control} name = "emotions" />
 
                 <div className="edit-form-group">

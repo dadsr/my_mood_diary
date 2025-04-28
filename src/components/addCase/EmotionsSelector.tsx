@@ -9,7 +9,21 @@ interface EmotionsSelectorProps {
     control: Control<CaseFormValues>;
     name: "emotions";
 }
-
+/**
+ * EmotionsSelector Component
+ *
+ * Provides a multi-select dropdown for choosing emotions and sliders for adjusting their intensity.
+ * Integrates with react-hook-form for controlled form state.
+ *
+ * @param {Object} props
+ * @param {Control<CaseFormValues>} props.control - The react-hook-form control object.
+ * @param {"emotions"} props.name - The name of the form field (should be "emotions").
+ *
+ * @returns {JSX.Element} The rendered emotion selector UI.
+ *
+ * @example
+ * <EmotionsSelector control={control} name="emotions" />
+ */
 export function EmotionsSelector({ control, name }: EmotionsSelectorProps): JSX.Element {
     // Create options for the Select component
     const emotionOptions: EmotionOption[] = Object.entries(EmotionsConst).map(([key, emotion]) => ({
